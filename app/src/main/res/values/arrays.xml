@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="video_type_suffix">
+        <item>.rmvb</item>
+        <item>.mp4</item>
+        <item>.avi</item>
+        <item>.wmv</item>
+        <item>.mkv</item>
+        <item>.m2ts</item>
+        <item>.3gp</item>
+        <item>.rm</item>
+    </string-array>
+</resources>

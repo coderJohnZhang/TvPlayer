@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景图 -->
+    <item android:id="@+android:id/background" >
+        <nine-patch android:src="@mipmap/seekbar_total" />
+    </item>
+    <!-- 进度度 -->
+    <item android:id="@+android:id/progress" >
+        <clip >
+            <nine-patch android:src="@mipmap/seekbar_play" />
+        </clip>
+    </item>
+</layer-list>

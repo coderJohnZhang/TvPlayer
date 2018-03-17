@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.tcl.john.tvplayer.VideoPlayer
+        android:id="@+id/ijk_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <RelativeLayout
+        android:id="@+id/play_info_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:layout_gravity="center|bottom"
+        android:background="@color/transparent">
+
+        <SeekBar
+            android:id="@+id/play_sb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:maxHeight="8px"
+            android:minHeight="8px"
+            android:progressDrawable="@drawable/player_seekbar_progress"
+            android:thumb="@mipmap/seekbar_thumb"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/buffer_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+</FrameLayout>
