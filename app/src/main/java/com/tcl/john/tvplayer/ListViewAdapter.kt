@@ -40,13 +40,13 @@ class ListViewAdapter<T>(mContext: Context, dataList: List<T>, private val layou
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val dataBinding: ViewDataBinding = if (convertView == null) {
+        val dataBinding: ViewDataBinding? = if (convertView == null) {
             DataBindingUtil.inflate(inflater, layoutId, parent, false)
         } else {
             DataBindingUtil.getBinding(convertView)
         }
-        dataBinding.setVariable(variableId, dataList[position])
+        dataBinding?.setVariable(variableId, dataList[position])
 
-        return dataBinding.root
+        return dataBinding!!.root
     }
 }

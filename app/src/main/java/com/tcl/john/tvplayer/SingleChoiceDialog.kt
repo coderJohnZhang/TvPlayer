@@ -20,7 +20,7 @@ class SingleChoiceDialog(context: Context, data: List<FileBean>) : Dialog(contex
 
     init {
         if (context is Activity) {
-            ownerActivity = context
+            ownerActivity
         }
         this.data = data as ArrayList<FileBean>
     }
@@ -37,14 +37,14 @@ class SingleChoiceDialog(context: Context, data: List<FileBean>) : Dialog(contex
             val file = data[position]
             Log.d(TAG, "onItemClick: name = " + file.fileName.get() + " filePath = " + file.filePath.get())
             dismiss()
-            PlayerActivity.navigateTo(ownerActivity, file.filePath.get())
+            PlayerActivity.navigateTo(ownerActivity!!, file.filePath.get()!!)
         }
         setCanceledOnTouchOutside(false)
     }
 
     companion object {
 
-        val TAG = SingleChoiceDialog::class.java.simpleName!!
+        val TAG = SingleChoiceDialog::class.java.simpleName
     }
 }
 

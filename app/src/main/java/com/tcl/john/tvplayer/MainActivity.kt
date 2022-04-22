@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
         getAllFiles(File(usbRoot))
         //按名称排序
-        mFileList.sortWith(Comparator { o1, o2 -> o1.fileName.get().compareTo(o2.fileName.get()) })
+        mFileList.sortWith(Comparator { o1, o2 -> o1.fileName.get()!!.compareTo(o2.fileName.get()!!) })
         Log.d(TAG, "onCreate: mFileList.size() = " + mFileList.size)
     }
 

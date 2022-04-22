@@ -110,7 +110,7 @@ class PlayerActivity : Activity() {
         })
         val filePath: String
         if (intent != null) {
-            filePath = intent.getStringExtra(KEY_EXTRA_FILE_PATH)
+            filePath = intent.getStringExtra(KEY_EXTRA_FILE_PATH)!!
             Log.d(TAG, "onCreate: filePath = $filePath")
             if (!TextUtils.isEmpty(filePath)) {
                 loadVideo(filePath)
@@ -172,9 +172,8 @@ class PlayerActivity : Activity() {
     private inner class InnerMsgHandler : Handler() {
 
         override fun handleMessage(msg: Message) {
-            val what = msg.what
             //Log.d(TAG, "handleMessage: what = " + what);
-            when (what) {
+            when (msg.what) {
                 MESSAGE_REFRESH_UI -> refreshUI()
                 else -> {
                 }
