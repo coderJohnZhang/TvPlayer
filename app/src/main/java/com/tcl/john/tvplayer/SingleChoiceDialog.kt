@@ -17,11 +17,12 @@ import kotlinx.android.synthetic.main.file_list_layout.*
 class SingleChoiceDialog(context: Context, data: List<FileBean>) : Dialog(context) {
     private var data = ArrayList<FileBean>()
     private var mFileListAdapter: ListViewAdapter<FileBean>? = null
+    private var activity: Activity
 
     init {
-        if (context is Activity) {
-            ownerActivity
-        }
+
+        activity = context as Activity
+
         this.data = data as ArrayList<FileBean>
     }
 
@@ -35,9 +36,9 @@ class SingleChoiceDialog(context: Context, data: List<FileBean>) : Dialog(contex
 
         file_lv!!.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             val file = data[position]
-            Log.d(TAG, "onItemClick: name = " + file.fileName.get() + " filePath = " + file.filePath.get())
+            Log.d(TAG, "onItemClick: name = " + file.fileName.get() + ", filePath = " + file.filePath.get() + ", activity = " + activity)
+            PlayerActivity.navigateTo(activity, file.filePath.get()!!)
             dismiss()
-            PlayerActivity.navigateTo(ownerActivity!!, file.filePath.get()!!)
         }
         setCanceledOnTouchOutside(false)
     }

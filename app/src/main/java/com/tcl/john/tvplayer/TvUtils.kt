@@ -12,7 +12,7 @@ import java.lang.reflect.InvocationTargetException
 
 object TvUtils {
 
-    var TAG = TvUtils::class.java.name
+    private var TAG = TvUtils::class.java.name
 
     fun getStoragePath(mContext: Context): String {
         var targetPath = ""

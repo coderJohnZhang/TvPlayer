@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
     //判断是否是视频文件
     private fun isVideoFile(fileName: String): Boolean {
-        val name = fileName.toLowerCase()
+        val name = fileName.lowercase(Locale.getDefault())
         val suffixs = resources.getStringArray(
                 R.array.video_type_suffix)
         return suffixs.any { name.endsWith(it) }
